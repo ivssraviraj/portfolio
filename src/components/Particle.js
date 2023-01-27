@@ -3,7 +3,8 @@ import Particles from "react-tsparticles";
 
 function Particle() {
   return (
-    <Particles
+    <div style={{zIndex: "-1"}}>
+      <Particles
       id="tsparticles"
       params={{
         particles: {
@@ -49,6 +50,8 @@ function Particle() {
         retina_detect: true,
       }}
     />
+    </div>
+
   );
 }
 

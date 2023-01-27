@@ -8,12 +8,10 @@ import Button from "react-bootstrap/Button";
 import pdf from "../../Assets/Raviraj_Indraganti.pdf";
 import {AiOutlineDownload, AiOutlineHome} from "react-icons/ai";
 import about from "../About/About"
-import {Link, useHistory, useNavigate} from "react-router-dom";
+import {NavLink, useHistory, useNavigate} from "react-router-dom";
 import About from "../About/About";
+import LikeButton from '../LikeButton/LikeButton'
 
-import Navbar from "react-bootstrap/Navbar";
-import Nav from "react-bootstrap/Nav";
-import Like from "../Like";
 
 
 function Home() {
@@ -34,9 +32,7 @@ function Home() {
   return (
     <section>
       <Container fluid className="home-section" id="home">
-        <Particle />
-
-        <Container className="home-content">
+        <Container className="home-content" fluid="md">
           <Row>
 
 
@@ -58,54 +54,29 @@ function Home() {
               </div>
             </Col>
 
-            <Col md={5} style={{ paddingBottom: 20, position : "absolute", right : 50}}>
+            <Col md={5} style={{ paddingBottom: 20, right : 50}}>
               <img
                   src={homeLogo}
                   alt="home pic"
                   className="img-fluid"
-
-                  style={{ maxHeight: "320px" }}
+                  style={{ maxHeight: "320px", display: "block", marginLeft: "auto", marginRight: "auto", borderRadius: "5px"}}
               />
             </Col>
 
           </Row>
         </Container>
-        <Like />
-        {/*<Button*/}
-        {/*    className="about-btn"*/}
-        {/*    // variant="primary"*/}
-        {/*    // type="link"*/}
-        {/*    // htmlType="submit"*/}
-        {/*    // href="https://ravirajindraganti.com/about"*/}
-        {/*    onClick={goToAbout}*/}
-        {/*    // // onSubmit={}*/}
-        {/*    // // target="_blank"*/}
-        {/*    // // className="fork-btn-inner"*/}
-        {/*    // style={{ maxWidth: "350px" }}*/}
-        {/*>*/}
-        {/*  &nbsp;Click here to know more about me*/}
-        {/*</Button>*/}
-
-        {/*<Navbar.Collapse id="responsive-navbar-nav"> /!*className="ms-auto"*!/*/}
-        {/*  <Nav defaultActiveKey="#home">*/}
-        {/*    <Nav.Item>*/}
-        {/*      <Nav.Link as={Link} to="/about" onClick={() => updateExpanded(false)}>*/}
-        {/*        <AiOutlineHome style={{ marginBottom: "2px" }} /> About*/}
-        {/*      </Nav.Link>*/}
-        {/*    </Nav.Item>*/}
-        {/*  </Nav>*/}
-        {/*</Navbar.Collapse>*/}
-        {/*<Text style={{color: 'blue'}}*/}
-        {/*      onPress={() => Linking.openURL('http://google.com')}>*/}
-        {/*  Google*/}
-        {/*</Text>*/}
-
+        {/* <Like /> */}
+        <LikeButton/>
+        <NavLink to="/about">
+          <Button variant="primary">
+            Click to know more about me!
+          </Button>
+        </NavLink>
         <br/>
         <br/>
-        {/*<br/>*/}
 
       </Container>
-      {/*<Home2 />*/}
+      <Particle />
     </section>
   );
 }

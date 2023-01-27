@@ -257,13 +257,14 @@ button:focus {
 
 .home-section {
   position: relative;
-  z-index: -1;
+  /* z-index: -1; */
   /*background-image: var(--image-gradient), url(./Assets/home-bg.jpg);*/
   background-position: top center;
   background-repeat: no-repeat;
   background: #000;
   padding-bottom: 30px !important;
   padding-top: 30px !important;
+  height: 95vh;
 }
 
 .home-content {
@@ -283,7 +284,7 @@ button:focus {
 }
 
 .main-name {
-  color: #2df82d;
+  color: #349e34;
 }
 
 .Typewriter__wrapper {
