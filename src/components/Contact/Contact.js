@@ -3,11 +3,13 @@ import emailjs from "@emailjs/browser";
 import styled from "styled-components";
 import Particle from "../Particle";
 import {Col, Container, Row} from "react-bootstrap";
+import { useNavigate } from 'react-router-dom';
 
 // npm i @emailjs/browser
 
 const Contact = () => {
     let form = useRef();
+    const navigate = useNavigate();
 
     const sendEmail = (e) => {
         e.preventDefault();
@@ -32,6 +34,7 @@ const Contact = () => {
                     }
                 );
             alert("Thanks For Sharing Your Contact Information!")
+            navigate('/home', { replace: true });
         // }
     };
 
